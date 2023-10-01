@@ -1,0 +1,35 @@
+.ant-select-selector {
+  border-radius: 50px !important;
+  height: 40px !important;
+  display: flex !important;
+  border: none;
+  align-items: center !important;
+  background-color: #f5f5f5 !important;
+  box-shadow: 0px 2px 3px rgb(169, 167, 167) !important;
+  outline: none;
+  padding-left: 15px;
+}
+
+.ant-picker {
+  width: 100% !important;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--gray);
+}
+
+.ant-picker input {
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 650px) {
+  .ant-form {
+    width: 90% !important;
+  }
+
+  .ant-radio-wrapper {
+    margin: 3px 0 !important;
+  }
+  .registracija .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+}
