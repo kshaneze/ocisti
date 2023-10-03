@@ -7,7 +7,7 @@ function JobPostForm() {
 
   return (
     <Row gutter={[16, 16]}>
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item name='propertyType' label='Vrsta objekta'>
           <select placeholder='Vrsta objetka'>
             <option value='Kuca'>Kuca</option>
@@ -21,7 +21,7 @@ function JobPostForm() {
         </Form.Item>
       </Col>
 
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item name='cleaningType' label='Vrsta čišćenja'>
           <select>
             <option value='Standardno'>Standardno</option>
@@ -31,7 +31,7 @@ function JobPostForm() {
         </Form.Item>
       </Col>
 
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item
           label='Površina objekta'
           rules={[
@@ -46,7 +46,7 @@ function JobPostForm() {
         </Form.Item>
       </Col>
 
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item
           label='Grad'
           rules={[{ required: true, message: 'Molimo Vas da ukucate grad' }]}
@@ -55,7 +55,7 @@ function JobPostForm() {
           <input placeholder='Budva' />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item
           label='Adresa'
           rules={[{ required: true, message: 'Molimo Vas da ukucate adresu' }]}
@@ -65,7 +65,7 @@ function JobPostForm() {
         </Form.Item>
       </Col>
 
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item label='Datum i vrijeme' name='date'>
           <DatePicker showTime />
         </Form.Item>
@@ -83,7 +83,7 @@ function JobPostForm() {
         </Form.Item>
       </Col>
 
-      <Col span={8}>
+      <Col xs={12} xl={8} span={8}>
         <Form.Item name='price' label='Cijena'>
           <input type='number' placeholder='45€' />
         </Form.Item>

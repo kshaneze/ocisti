@@ -1,10 +1,12 @@
-import { Col, Row } from 'antd'
+import { Col, Row, Button } from 'antd'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 function EmployerInfo({ emploerInfo }: { emploerInfo: any }) {
+  const router = useRouter()
   return (
     <Row>
-      <Col span={12}>
+      <Col xl={12} xs={24} span={12}>
         <div className='flex flex-col gap-3'>
           <div className='flex justify-between'>
             <span>Ime</span>
@@ -35,6 +37,11 @@ function EmployerInfo({ emploerInfo }: { emploerInfo: any }) {
 
         <span>{emploerInfo.about}</span>
       </Col>
+      <div className='flex justify-end gap-3'>
+        <Button type='default' onClick={() => router.back()}>
+          Nazad
+        </Button>
+      </div>
     </Row>
   )
 }

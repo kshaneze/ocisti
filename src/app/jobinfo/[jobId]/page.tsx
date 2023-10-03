@@ -60,6 +60,7 @@ function JobInfo() {
         status: 'Na čekanju',
       })
       message.success(response.data.message)
+      fetchApplications()
     } catch (error: any) {
       message.error(error.message)
     } finally {

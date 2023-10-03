@@ -9,6 +9,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import Loader from './Loader'
 import Header from './Header'
+import HeaderMobile from './HeaderMobile'
 
 function LayoutProvider({ children }: { children: React.ReactNode }) {
   const { currentUser } = useSelector((state: any) => state.users)
@@ -124,6 +125,7 @@ function LayoutProvider({ children }: { children: React.ReactNode }) {
           ) : (
             currentUser && (
               <>
+                <HeaderMobile />
                 <div className='layout-parent'>
                   <div className='sidebar'>
                     <div className='logo'>
@@ -169,7 +171,7 @@ function LayoutProvider({ children }: { children: React.ReactNode }) {
                     <div className='user-info'>
                       {isSidebarExpanded && (
                         <div className='flex flex-col'>
-                          <span>{currentUser?.name}</span>
+                          <span>{currentUser?.firstname}</span>
                           <span>{currentUser?.email}</span>
                         </div>
                       )}

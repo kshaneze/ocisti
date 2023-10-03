@@ -8,10 +8,13 @@ import axios from 'axios'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLoading } from '@/redux/loadersSlice'
+import { useRouter } from 'next/navigation'
 
 function Profile() {
   const { currentUser } = useSelector((state: any) => state.users)
   const dispatch = useDispatch()
+
+  const router = useRouter()
 
   const onFinish = async (values: any) => {
     try {
@@ -34,14 +37,22 @@ function Profile() {
   return (
     <div>
       <PageTitle title='Profil' />
-      <Form layout='vertical' initialValues={currentUser} onFinish={onFinish}>
+      <Form
+        layout='vertical'
+        initialValues={currentUser}
+        className='form-profile'
+        onFinish={onFinish}
+      >
         {currentUser?.userType === 'employer' ? (
           <EmployerForm />
         ) : (
           <EmployeeForm />
         )}
 
-        <div className='flex justify-end my-3'>
+        <div className='flex justify-between my-3'>
+          <Button type='default' onClick={() => router.back()}>
+            Nazad
+          </Button>
           <Button type='primary' htmlType='submit'>
             Sačuvaj
           </Button>

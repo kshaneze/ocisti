@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema(
       required: true,
       default: false,
     },
+    image: {
+      type: String,
+      required: true,
+    },
 
     // // additional fields for employee
     // skills: {

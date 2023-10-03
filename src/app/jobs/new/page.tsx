@@ -34,7 +34,7 @@ function NewJob() {
         </Button>
       </div>
 
-      <Form layout='vertical' onFinish={onFinish}>
+      <Form layout='vertical' className='form-newJob' onFinish={onFinish}>
         <JobPostForm />
 
         <div className='flex justify-end items-center gap-3 my-3'>

@@ -1,9 +1,9 @@
 import { connectDB } from '@/config/dbConfig'
 import { validateJWT } from '@/helpers/validateJWT'
+import { sendEmail } from '@/helpers/sendEmail'
+
 import Application from '@/models/applicationModel'
 import { NextRequest, NextResponse } from 'next/server'
-
-import { sendEmail } from '@/helpers/sendEmail'
 
 connectDB()
 

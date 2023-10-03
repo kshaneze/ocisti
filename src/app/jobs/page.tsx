@@ -33,8 +33,6 @@ function Jobs() {
     }
   }
 
-  
-
   React.useEffect(() => {
     fetchJobs()
   }, [])
@@ -58,7 +56,7 @@ function Jobs() {
 
   return (
     <div>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center postedJobs-container'>
         <PageTitle title='Objavljeni Poslovi' />
         <Button type='primary' onClick={() => router.push('/jobs/new')}>
           Objavi Novi Oglas

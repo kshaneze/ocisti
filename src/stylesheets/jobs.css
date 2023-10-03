@@ -61,11 +61,16 @@
   font-family: 'Peachi';
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 650px) {
   .jobsContainer {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     height: 100%;
     overflow: scroll;
   }
@@ -78,6 +83,14 @@
     width: auto;
     gap: 7px;
     border: 2px solid var(--gray);
-    font-size: 13px;
+    font-size: 15px;
+  }
+
+  .postedJobs-container {
+    padding-top: 10px;
+  }
+
+  .postedJobs-container button {
+    font-size: 15px !important;
   }
 }

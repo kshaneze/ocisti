@@ -32,4 +32,13 @@
   .registracija .ant-form-item {
     margin-bottom: 0 !important;
   }
+
+  .ant-divider {
+    display: none;
+  }
+
+  .form-profile,
+  .form-newJob {
+    width: 100% !important;
+  }
 }

@@ -251,3 +251,9 @@
 .underline {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 650px) {
+  .text-xl {
+    font-size: 15px;
+  }
+}

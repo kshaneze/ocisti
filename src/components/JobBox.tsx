@@ -53,28 +53,30 @@ function JobBox({
       <div className='JobBoxTitle'>
         <p className='title'>Čišćenje {title}</p>
 
-        <Tooltip title='Delete'>
-          <i
-            className='ri-delete-bin-line'
-            onClick={() => deleteJob(job._id)}
-          ></i>
-        </Tooltip>
+        <div>
+          <Tooltip title='Izbriši oglas'>
+            <i
+              className='ri-delete-bin-line'
+              onClick={() => deleteJob(job._id)}
+            ></i>
+          </Tooltip>
 
-        <Tooltip title='Uredi oglas'>
-          <i
-            className='ri-pencil-line'
-            onClick={() => router.push(`/jobs/edit/${id}`)}
-          ></i>
-        </Tooltip>
-        <Tooltip title='Prijave na posao'>
-          <i
-            className='ri-file-list-3-line'
-            onClick={() => {
-              setSelectedJob(job)
-              setShowApplications(true)
-            }}
-          ></i>
-        </Tooltip>
+          <Tooltip title='Uredi oglas'>
+            <i
+              className='ri-pencil-line'
+              onClick={() => router.push(`/jobs/edit/${id}`)}
+            ></i>
+          </Tooltip>
+          <Tooltip title='Prijave na posao'>
+            <i
+              className='ri-file-list-3-line'
+              onClick={() => {
+                setSelectedJob(job)
+                setShowApplications(true)
+              }}
+            ></i>
+          </Tooltip>
+        </div>
       </div>
       <div className='JobBoxLocation'>
         <p>
