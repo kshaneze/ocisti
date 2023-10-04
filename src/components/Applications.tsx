@@ -1,9 +1,9 @@
 'use client'
 import { Modal } from 'antd'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import PageTitle from '@/components/PageTitle'
-import { Table, message, Button } from 'antd'
+import { Table, message, Button, Avatar, Divider, List, Skeleton } from 'antd'
 import { useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
@@ -53,9 +53,6 @@ function Applications({
     }
   }
 
-  
-
-
   React.useEffect(() => {
     fetchApplications()
   }, [])
@@ -102,9 +99,8 @@ function Applications({
       dataIndex: '_id',
       render: (applicationId: string, application: any) => (
         <Button
-          onClick={
-            () => router.push(`/informacijeKorisnika/${applicationId}`)
-            // application.user._id
+          onClick={() =>
+            router.push(`/informacijeKorisnika/${application.user._id}`)
           }
         >
           View
@@ -112,6 +108,47 @@ function Applications({
       ),
     },
   ]
+
+  interface DataType {
+    gender: string
+    name: {
+      title: string
+      first: string
+      last: string
+    }
+    email: string
+    picture: {
+      large: string
+      medium: string
+      thumbnail: string
+    }
+    nat: string
+  }
+
+  const [loading, setloading] = useState(false)
+  const [data, setData] = useState<DataType[]>([])
+
+  const loadMoreData = () => {
+    if (loading) {
+      return
+    }
+    setloading(true)
+    fetch(
+      'https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo'
+    )
+      .then((res) => res.json())
+      .then((body) => {
+        setData([...data, ...body.results])
+        setloading(false)
+      })
+      .catch(() => {
+        setloading(false)
+      })
+  }
+
+  useEffect(() => {
+    loadMoreData()
+  }, [])
 
   return (
     <Modal
@@ -122,6 +159,30 @@ function Applications({
     >
       <div className='my-2'>
         <Table columns={columns} dataSource={application} />
+      </div>
+
+      <div
+        id='scrollableDiv'
+        style={{
+          height: 400,
+          overflow: 'auto',
+          padding: '0 16px',
+          border: '1px solid rgba(140, 140, 140, 0.35)',
+        }}
+      >
+        <List
+          dataSource={data}
+          renderItem={(item) => (
+            <List.Item key={item.email}>
+              <List.Item.Meta
+                avatar={<Avatar src={item.picture.large} />}
+                title={<a href='https://ant.design'>{item.name.last}</a>}
+                description={item.email}
+              />
+              <div>Content</div>
+            </List.Item>
+          )}
+        />
       </div>
     </Modal>
   )

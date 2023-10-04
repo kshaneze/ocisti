@@ -189,6 +189,10 @@
   text-align: right;
 }
 
+.text-xs {
+  font-size: 10px !important;
+}
+
 .text-sm {
   font-size: 12px;
 }

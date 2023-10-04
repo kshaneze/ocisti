@@ -21,7 +21,7 @@ function RegistrationFormEmployee() {
   }
 
   return (
-    <div className='w-25'>
+    <div className='registrationEmployee-container w-25 '>
       <h1 className='headingTextColor text-center text-3xl'>
         Sing up to hire employee
       </h1>

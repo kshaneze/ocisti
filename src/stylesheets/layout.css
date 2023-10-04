@@ -179,6 +179,12 @@ i {
   display: none;
 }
 
+.radioContainer {
+  opacity: 0;
+  height: 0 !important;
+  pointer-events: none;
+}
+
 /* /////////////////////////// */
 /* HOME PAGE */
 /* /////////////////////////// */
@@ -444,6 +450,7 @@ i {
   color: white;
   font-size: 30px;
 }
+
 /* /////////////////////////// */
 /* PHONE RESPONSIVE */
 /* /////////////////////////// */
@@ -451,7 +458,7 @@ i {
   .layout-parent {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 0 0 70px 0;
     gap: 10px;
     width: 100%;
     height: 100%;
@@ -538,7 +545,10 @@ i {
     color: var(--primary);
   }
 
-  
+  .registrationEmployee-container,
+  .registrationEmployer-container {
+    width: 100%;
+  }
 
   /* ///////// login //////// */
   /* ///////////////////// */

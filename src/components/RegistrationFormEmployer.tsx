@@ -23,23 +23,26 @@ function RegistrationFormEmployer() {
   }
 
   return (
-    <div className='w-25'>
+    <div className='registrationEmployer-container w-25'>
       <h1 className='headingTextColor text-center text-3xl'>
-        Sing up to hire employer
+        Registruj se i objavi posao
       </h1>
       <Form layout='vertical' className='flex flex-col' onFinish={onFinish}>
-        <Form.Item name='userType'>
+        <Form.Item
+          name='userType'
+          className='radioContainer'
+          initialValue='employer'
+        >
           <Radio.Group>
             <Radio value='employer'>Employer</Radio>
-            <Radio value='employee'>Employee</Radio>
           </Radio.Group>
         </Form.Item>
         <Form.Item name='firstname'>
-          <input type='text' placeholder='First Name' className='input' />
+          <input type='text' placeholder='Ime' className='input' />
         </Form.Item>
 
         <Form.Item name='lastname'>
-          <input type='text' placeholder='Last Name' className='input' />
+          <input type='text' placeholder='Prezime' className='input' />
         </Form.Item>
 
         <Form.Item name='email'>
@@ -47,13 +50,13 @@ function RegistrationFormEmployer() {
         </Form.Item>
 
         <Form.Item name='password'>
-          <input type='password' placeholder='Password' className='input' />
+          <input type='password' placeholder='Sifra' className='input' />
         </Form.Item>
 
         <Form.Item name='region'>
           <Select
             className='select'
-            placeholder='Choose your region'
+            placeholder='Izaberi svoj grad'
             options={[
               { value: 'Budva', label: 'Budva' },
               { value: 'Podgorica', label: 'Podgorica' },
@@ -62,24 +65,24 @@ function RegistrationFormEmployer() {
           />
         </Form.Item>
 
-        <Form.Item>
+        {/* <Form.Item>
           <Checkbox>
             Send me emails with tips on how to find employee that fits my needs.{' '}
           </Checkbox>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item>
-          <Checkbox>
-            Yes, I understand and agree to the Očisti Terms of Service ,
-            including the User Agreement and Privacy Policy .
+          <Checkbox className='text-xs'>
+            Da, razumem i slažem se sa uslovima korišćenja usluge Očisti,
+            uključujući Korisnički ugovor i Politiku privatnosti.
           </Checkbox>
         </Form.Item>
 
         <Button type='primary' htmlType='submit' block>
-          Create account
+          Kreiraj Nalog
         </Button>
 
         <span className='text-center my-3'>
-          Already have an account? <Link href='/prijava'> Login</Link>
+          Već imate svoj nalog? <Link href='/prijava'> Prijavi se!</Link>
         </span>
       </Form>
     </div>

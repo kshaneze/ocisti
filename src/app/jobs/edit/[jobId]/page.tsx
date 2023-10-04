@@ -59,7 +59,12 @@ function EditJob() {
           </Button>
         </div>
 
-        <Form layout='vertical' onFinish={onFinish} initialValues={jobData}>
+        <Form
+          layout='vertical'
+          onFinish={onFinish}
+          className='form-edit'
+          initialValues={jobData}
+        >
           <JobPostForm />
 
           <div className='flex justify-end items-center gap-3 my-3'>

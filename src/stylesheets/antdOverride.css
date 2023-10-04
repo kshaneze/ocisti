@@ -26,6 +26,11 @@
     width: 90% !important;
   }
 
+  .registrationEmployee-container .ant-form,
+  .registrationEmployer-container .ant-form {
+    margin: 0 auto !important;
+  }
+
   .ant-radio-wrapper {
     margin: 3px 0 !important;
   }
@@ -38,7 +43,8 @@
   }
 
   .form-profile,
-  .form-newJob {
+  .form-newJob,
+  .form-edit {
     width: 100% !important;
   }
 }

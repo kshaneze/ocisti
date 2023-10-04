@@ -110,7 +110,7 @@ function Applications() {
       </div>
 
       <div className='my-2'>
-        <Table
+        {/* <Table
           columns={columns}
           dataSource={application}
           locale={{
@@ -123,7 +123,7 @@ function Applications() {
               </div>
             ),
           }}
-        />
+        /> */}
       </div>
       <div className='jobsContainer'>
         {application.map((app: any) => (
