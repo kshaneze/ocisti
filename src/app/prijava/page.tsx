@@ -36,7 +36,7 @@ function Login() {
         </Form.Item>
 
         <Form.Item name='password'>
-          <input type='password' placeholder='Password' className='input' />
+          <input type='password' placeholder='Šifra' className='input' />
         </Form.Item>
 
         <Button type='primary' htmlType='submit' block>

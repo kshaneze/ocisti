@@ -50,7 +50,7 @@ function RegistrationFormEmployer() {
         </Form.Item>
 
         <Form.Item name='password'>
-          <input type='password' placeholder='Sifra' className='input' />
+          <input type='password' placeholder='Šifra' className='input' />
         </Form.Item>
 
         <Form.Item name='region'>

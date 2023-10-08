@@ -21,7 +21,7 @@ function Filters({
           onChange={(e) =>
             setFilters({ ...filters, searchText: e.target.value })
           }
-          placeholder='Search Jobs'
+          placeholder='Izaberi objekat'
         />
       </div>
 
@@ -31,7 +31,7 @@ function Filters({
           value={filters.location}
           onChange={(e) => setFilters({ ...filters, location: e.target.value })}
         >
-          <option value=''>Select Location</option>
+          <option value=''>Izaberi lokaciju</option>
           <option value='Budva'>Budva</option>
           <option value='Kotor'>Kotor</option>
           <option value='Podgorica'>Podgorica</option>

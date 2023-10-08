@@ -64,7 +64,7 @@ function JobBoxPrijavljeniPoslovi({
       </div>
       <div className='applied-date container'>
         <p>Posao počinje:</p>
-        <p className='date'>{dates}</p>
+        <div className='date'>{dates}</div>
       </div>
       <div className='JobBoxPrice'>
         <p className='text-xl'>{price}€ </p>
